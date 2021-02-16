@@ -1,0 +1,29 @@
+﻿@model LoginModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Scripts
+{
+    <script src="~/js/login.js?v=1"></script>
+}
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="mar-ver pad-btm">
+            <h1 class="h3">Giriş Yap</h1>
+            <p>Kullanıcı Adı ve Şifrenizi Giriniz</p>
+        </div>
+        <form id="loginForm" asp-controller="Account" asp-action="Login" method="post">
+            <div class="form-group">
+                <input asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı">
+            </div>
+            <div class="form-group">
+                <input asp-for="Password" autocomplete="off"  type="password"  class="form-control" placeholder="Şifre">
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Giriş Yap</button>
+        </form>
+    </div>
+</div>

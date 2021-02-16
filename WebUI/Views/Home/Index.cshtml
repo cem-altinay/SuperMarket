@@ -1,0 +1,40 @@
+﻿@model List<ProductListDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Ürün Listesi</h1>
+</div>
+
+<div class="row">
+    <table class="table table-borderless table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <td>Ürün Adı </td>
+                <td>Ürün Açıklama </td>
+                <td>Ürün Tipi </td>
+                <td>Ürün Stok Adeti </td>
+                <td>Ürün Fiyatı </td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.ProductTypeText</td>
+                    <td>@item.StockAmount</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <button class="btn btn-primary">Sepete Ekle</button>
+                        <button class="btn btn-success">Düzenle</button>
+                        <button class="btn btn-warning">Sil</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
